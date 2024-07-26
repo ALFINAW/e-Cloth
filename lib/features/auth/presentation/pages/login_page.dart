@@ -1,8 +1,9 @@
-import 'package:e_cloth/core/asset/assets.gen.dart';
 import 'package:e_cloth/core/constants/app_colors.dart';
 import 'package:e_cloth/features/auth/presentation/pages/register_page.dart';
 import 'package:e_cloth/features/auth/presentation/widget/button.dart';
 import 'package:e_cloth/features/auth/presentation/widget/text_field.dart';
+import 'package:e_cloth/features/home/presentation/pages/home_page.dart';
+import 'package:e_cloth/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -22,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         title: Padding(
           padding: const EdgeInsets.only(top: 20.0),
-          child: Assets.images.logo_red.image(fit: BoxFit.cover),
+          child: Assets.images.logoRed.image(fit: BoxFit.cover),
         ),
       ),
       body: SingleChildScrollView(
@@ -35,10 +36,8 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Text(
                     "Email",
-                    style: TextStyle(
-                        fontSize: 14.0,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -51,10 +50,8 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Text(
                     "Password",
-                    style: TextStyle(
-                        fontSize: 14.0,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -72,12 +69,11 @@ class _LoginPageState extends State<LoginPage> {
                   labelColor: AppColors.premierTwo,
                   suffixIcon: Icons.arrow_right,
                   onPressed: () => {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) =>
-                        //           const BasicMainNavigationView()),
-                        // )
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomePage()),
+                        )
                       }),
               const SizedBox(height: 20.0),
               Row(
@@ -94,7 +90,6 @@ class _LoginPageState extends State<LoginPage> {
                       'or',
                       style: TextStyle(
                         fontSize: 13.0,
-                        fontFamily: 'Poppins',
                       ),
                     ),
                   ),
@@ -109,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 20.0),
               MyButton(
                   label: 'Sign up with Google',
-                  icon: Assets.images.logo_google.image(fit: BoxFit.fill),
+                  icon: Assets.images.logoGoogle.image(fit: BoxFit.fill),
                   buttonColor: Colors.transparent,
                   labelColor: AppColors.secondaryOne,
                   borderColor: Colors.grey,

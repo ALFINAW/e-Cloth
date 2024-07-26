@@ -1,5 +1,5 @@
-import 'package:e_cloth/core/asset/assets.gen.dart';
 import 'package:e_cloth/core/constants/app_colors.dart';
+import 'package:e_cloth/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreenPage extends StatelessWidget {
@@ -15,7 +15,7 @@ class SplashScreenPage extends StatelessWidget {
       body: Container(
         color: AppColors.premierOne,
         height: MediaQuery.of(context).size.height,
-        child: Center(child: Assets.images.logo_white.image(fit: BoxFit.cover)),
+        child: Center(child: Assets.images.logoWhite.image(fit: BoxFit.cover)),
       ),
     );
   }

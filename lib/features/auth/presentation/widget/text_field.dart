@@ -1,7 +1,7 @@
 import 'package:e_cloth/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart'; // Pastikan untuk menambahkan package intl
+import 'package:intl/intl.dart';
 
 class MyTextField extends StatefulWidget {
   final String? id;
@@ -19,8 +19,8 @@ class MyTextField extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final Function(String) onChanged;
   final Function(String)? onSubmitted;
-  final bool isDatePicker; // Menandakan apakah ini date picker
-  final Function(DateTime)? onDateSelected; // Callback untuk tanggal
+  final bool isDatePicker;
+  final Function(DateTime)? onDateSelected;
 
   const MyTextField({
     super.key,
@@ -39,8 +39,8 @@ class MyTextField extends StatefulWidget {
     this.inputFormatters,
     required this.onChanged,
     this.onSubmitted,
-    this.isDatePicker = false, // Default tidak menggunakan date picker
-    this.onDateSelected, // Callback untuk tanggal
+    this.isDatePicker = false,
+    this.onDateSelected,
   });
 
   @override
@@ -126,11 +126,18 @@ class _MyTextFieldState extends State<MyTextField> {
                           )
                         : null,
                 hintText: widget.hint,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(13.0),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.0),
                   borderSide: const BorderSide(
                     color: Colors.grey,
-                    width: 2.0,
+                    width: 1.0,
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                  borderSide: const BorderSide(
+                    color: Colors.blue,
+                    width: 1.0,
                   ),
                 ),
                 contentPadding: const EdgeInsets.all(12.0),
@@ -144,8 +151,7 @@ class _MyTextFieldState extends State<MyTextField> {
             const SizedBox(height: 8.0),
             Text(
               widget.helper!,
-              style: const TextStyle(
-                  color: Colors.grey, fontFamily: "Poppins", fontSize: 12),
+              style: const TextStyle(color: Colors.grey, fontSize: 12),
             ),
           ],
         ],

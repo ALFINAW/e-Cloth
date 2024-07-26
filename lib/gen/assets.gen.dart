@@ -12,43 +12,65 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/Bookmark.png
-  AssetGenImage get bookmark =>
-      const AssetGenImage('assets/icons/Bookmark.png');
-
-  /// File path: assets/icons/Category.png
-  AssetGenImage get category =>
-      const AssetGenImage('assets/icons/Category.png');
-
-  /// File path: assets/icons/Home.png
-  AssetGenImage get home => const AssetGenImage('assets/icons/Home.png');
-
-  /// File path: assets/icons/Profile.png
-  AssetGenImage get profile => const AssetGenImage('assets/icons/Profile.png');
-
-  /// File path: assets/icons/Vector.png
-  AssetGenImage get vector => const AssetGenImage('assets/icons/Vector.png');
+  /// File path: assets/icons/cart.png
+  AssetGenImage get cart => const AssetGenImage('assets/icons/cart.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [bookmark, category, home, profile, vector];
+  List<AssetGenImage> get values => [cart];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  AssetGenImage get logo_white =>
-      const AssetGenImage('assets/images/logo_white.png');
+  /// File path: assets/images/Accessories.png
+  AssetGenImage get accessories =>
+      const AssetGenImage('assets/images/Accessories.png');
 
-      AssetGenImage get logo_red =>
-      const AssetGenImage('assets/images/logo_red.png');
+  /// File path: assets/images/Bag.png
+  AssetGenImage get bag => const AssetGenImage('assets/images/Bag.png');
 
-      AssetGenImage get logo_google =>
+  /// File path: assets/images/Hoodies.png
+  AssetGenImage get hoodies => const AssetGenImage('assets/images/Hoodies.png');
+
+  /// File path: assets/images/Long Sleeve Flannel Shirt.png
+  AssetGenImage get longSleeveFlannelShirt =>
+      const AssetGenImage('assets/images/Long Sleeve Flannel Shirt.png');
+
+  /// File path: assets/images/Long Sleeve Square Flannel Shirt.png
+  AssetGenImage get longSleeveSquareFlannelShirt =>
+      const AssetGenImage('assets/images/Long Sleeve Square Flannel Shirt.png');
+
+  /// File path: assets/images/Shoes.png
+  AssetGenImage get shoes => const AssetGenImage('assets/images/Shoes.png');
+
+  /// File path: assets/images/Shorts.png
+  AssetGenImage get shorts => const AssetGenImage('assets/images/Shorts.png');
+
+  /// File path: assets/images/logo_google.png
+  AssetGenImage get logoGoogle =>
       const AssetGenImage('assets/images/logo_google.png');
 
+  /// File path: assets/images/logo_red.png
+  AssetGenImage get logoRed =>
+      const AssetGenImage('assets/images/logo_red.png');
+
+  /// File path: assets/images/logo_white.png
+  AssetGenImage get logoWhite =>
+      const AssetGenImage('assets/images/logo_white.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [logo_white, logo_red, logo_google];
+  List<AssetGenImage> get values => [
+        accessories,
+        bag,
+        hoodies,
+        longSleeveFlannelShirt,
+        longSleeveSquareFlannelShirt,
+        shoes,
+        shorts,
+        logoGoogle,
+        logoRed,
+        logoWhite
+      ];
 }
 
 class Assets {
@@ -59,11 +81,16 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName, {this.size = null});
+  const AssetGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  });
 
   final String _assetName;
 
   final Size? size;
+  final Set<String> flavors;
 
   Image image({
     Key? key,

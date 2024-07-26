@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.premierTwo),
         useMaterial3: true,
+        fontFamily: 'Poppins',
       ),
       home: const SplashScreenPage(),
       routes: {

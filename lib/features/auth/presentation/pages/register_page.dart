@@ -1,7 +1,7 @@
-import 'package:e_cloth/core/asset/assets.gen.dart';
 import 'package:e_cloth/core/constants/app_colors.dart';
 import 'package:e_cloth/features/auth/presentation/widget/button.dart';
 import 'package:e_cloth/features/auth/presentation/widget/text_field.dart';
+import 'package:e_cloth/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -22,7 +22,7 @@ class _RegisterPageState extends State<RegisterPage> {
         automaticallyImplyLeading: false,
         title: Padding(
           padding: const EdgeInsets.only(top: 20.0),
-          child: Assets.images.logo_red.image(fit: BoxFit.cover),
+          child: Assets.images.logoRed.image(fit: BoxFit.cover),
         ),
       ),
       body: SingleChildScrollView(
@@ -35,10 +35,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   Text(
                     "Email",
-                    style: TextStyle(
-                        fontSize: 14.0,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -51,10 +49,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   Text(
                     "Password",
-                    style: TextStyle(
-                        fontSize: 14.0,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -71,10 +67,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   Text(
                     "Name",
-                    style: TextStyle(
-                        fontSize: 14.0,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -87,21 +81,17 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   Text(
                     "Phone number",
-                    style: TextStyle(
-                        fontSize: 14.0,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
               const SizedBox(height: 8.0),
               MyTextField(
                 value: null,
-                keyboardType:
-                    TextInputType.number, // Menampilkan keyboard angka
+                keyboardType: TextInputType.number,
                 inputFormatters: <TextInputFormatter>[
-                  FilteringTextInputFormatter
-                      .digitsOnly, // Hanya menerima angka
+                  FilteringTextInputFormatter.digitsOnly,
                 ],
                 onChanged: (value) {},
               ),
@@ -109,10 +99,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   Text(
                     "Date of birth",
-                    style: TextStyle(
-                        fontSize: 14.0,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -126,9 +114,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     selectedDate = date;
                   });
                 },
-                onChanged: (value) {
-                  // Handle text change if needed
-                },
+                onChanged: (value) {},
               ),
               const SizedBox(height: 20.0),
               MyButton(

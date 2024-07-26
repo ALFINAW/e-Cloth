@@ -7,10 +7,10 @@ class MyButton extends StatelessWidget {
   final double? height;
   final Widget? icon;
   final IconData? suffixIcon;
-  final Color? buttonColor; // Warna background button
-  final Color? labelColor; // Warna label
-  final Color? borderColor; // Warna border
-  final double? borderWidth; // Ketebalan border
+  final Color? buttonColor;
+  final Color? labelColor;
+  final Color? borderColor;
+  final double? borderWidth;
   final double? fontSize;
 
   const MyButton({
@@ -40,13 +40,12 @@ class MyButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           minimumSize: Size(widgetWidth, widgetHeight),
-          backgroundColor:
-              buttonColor ?? Colors.transparent, // Warna background button
-          foregroundColor: labelColor ?? Colors.white, // Warna label
+          backgroundColor: buttonColor ?? Colors.transparent,
+          foregroundColor: labelColor ?? Colors.white,
           side: borderColor != null && borderWidth != null
               ? BorderSide(color: borderColor!, width: borderWidth!)
-              : BorderSide.none, // Border jika ada
-          elevation: 0, // Menghilangkan efek bayangan
+              : BorderSide.none,
+          elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),
@@ -64,15 +63,13 @@ class MyButton extends StatelessWidget {
                     height: widgetIconSize,
                     child: icon!,
                   ),
-                if (icon != null)
-                  const SizedBox(width: 10.0), // Spasi antara ikon dan label
+                if (icon != null) const SizedBox(width: 10.0),
                 Text(
                   label,
                   style: TextStyle(
                     fontSize: fontSize ?? 14.0,
-                    fontFamily: 'Poppins',
                     fontWeight: FontWeight.bold,
-                    color: labelColor ?? Colors.white, // Warna label
+                    color: labelColor ?? Colors.white,
                   ),
                 ),
               ],
@@ -83,7 +80,7 @@ class MyButton extends StatelessWidget {
                 child: Icon(
                   suffixIcon!,
                   size: widgetIconSize,
-                  color: labelColor ?? Colors.white, // Warna ikon suffix
+                  color: labelColor ?? Colors.white,
                 ),
               ),
           ],

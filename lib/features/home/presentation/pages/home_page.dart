@@ -18,11 +18,49 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(children: [
-          const SizedBox(height: 20.0),
-          Row(
+        body: Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: SingleChildScrollView(
+            child: Column(children: [
+              const SizedBox(height: 100.0),
+              headingOne(title: 'Category', subtitle: 'See All'),
+              const SizedBox(height: 10.0),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: categories.map((category) {
+                    return CategoryItem(category: category);
+                  }).toList(),
+                ),
+              ),
+              const SizedBox(height: 20.0),
+              headingOne(title: 'Today Sale !'),
+              const SizedBox(height: 10.0),
+              ProductCard(products: todaySaleProduct),
+              const SizedBox(height: 20.0),
+              headingOne(title: 'Popular Products'),
+              const SizedBox(height: 10.0),
+              ProductCard(products: popularProduct),
+              const SizedBox(height: 80.0),
+            ]),
+          ),
+        ),
+        Container(
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            border: Border(
+              bottom: BorderSide(
+                color: Colors.grey, 
+                width: 1.0, 
+              ),
+            ),
+          ),
+          padding:
+              const EdgeInsets.only(top: 40.0, bottom: 20, left: 20, right: 20),
+          child: Row(
+            // row01
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
@@ -33,28 +71,12 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(width: 16.0),
               SizedBox(
-                width: 24.0,
-                child: Assets.icons.cart.image(fit: BoxFit.fill),
-              ),
+                  width: 24.0,
+                  child: Assets.icons.cart.image(fit: BoxFit.cover)),
             ],
           ),
-          const SizedBox(height: 20.0),
-          headingOne(title: 'Category', subtitle: 'See All'),
-          const SizedBox(height: 10.0),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: categories.map((category) {
-                return CategoryItem(category: category);
-              }).toList(),
-            ),
-          ),
-          const SizedBox(height: 20.0),
-          headingOne(title: 'Today Sale!'),
-          Expanded(child: ProductCard(products: products))
-          // Menggunakan widget grid
-        ]),
-      ),
-    );
+        ),
+      ],
+    ));
   }
 }

@@ -5,15 +5,15 @@ class Product {
   final String title;
   final String category;
   final String price;
-  final String discountedPrice;
-  final bool isFavorite;
+  final String? discountedPrice;
+  bool isFavorite;
 
   Product({
     required this.imageWidget,
     required this.title,
     required this.category,
     required this.price,
-    required this.discountedPrice,
+    this.discountedPrice,
     this.isFavorite = false,
   });
 }

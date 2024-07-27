@@ -15,8 +15,21 @@ class $AssetsIconsGen {
   /// File path: assets/icons/cart.png
   AssetGenImage get cart => const AssetGenImage('assets/icons/cart.png');
 
+  /// File path: assets/icons/home.png
+  AssetGenImage get home => const AssetGenImage('assets/icons/home.png');
+
+  /// File path: assets/icons/like_border.png
+  AssetGenImage get likeBorder =>
+      const AssetGenImage('assets/icons/like_border.png');
+
+  /// File path: assets/icons/like_filed.svg
+  String get likeFiled => 'assets/icons/like_filed.svg';
+
+  /// File path: assets/icons/profile.png
+  AssetGenImage get profile => const AssetGenImage('assets/icons/profile.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [cart];
+  List<dynamic> get values => [cart, home, likeBorder, likeFiled, profile];
 }
 
 class $AssetsImagesGen {
@@ -32,6 +45,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/Hoodies.png
   AssetGenImage get hoodies => const AssetGenImage('assets/images/Hoodies.png');
 
+  /// File path: assets/images/Jogger pants Ultra Stretch DRY-EX.png
+  AssetGenImage get joggerPantsUltraStretchDRYEX => const AssetGenImage(
+      'assets/images/Jogger pants Ultra Stretch DRY-EX.png');
+
   /// File path: assets/images/Long Sleeve Flannel Shirt.png
   AssetGenImage get longSleeveFlannelShirt =>
       const AssetGenImage('assets/images/Long Sleeve Flannel Shirt.png');
@@ -45,6 +62,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/Shorts.png
   AssetGenImage get shorts => const AssetGenImage('assets/images/Shorts.png');
+
+  /// File path: assets/images/Tapered Pants Ultra Stretch DRY-EX.png
+  AssetGenImage get taperedPantsUltraStretchDRYEX => const AssetGenImage(
+      'assets/images/Tapered Pants Ultra Stretch DRY-EX.png');
 
   /// File path: assets/images/logo_google.png
   AssetGenImage get logoGoogle =>
@@ -63,10 +84,12 @@ class $AssetsImagesGen {
         accessories,
         bag,
         hoodies,
+        joggerPantsUltraStretchDRYEX,
         longSleeveFlannelShirt,
         longSleeveSquareFlannelShirt,
         shoes,
         shorts,
+        taperedPantsUltraStretchDRYEX,
         logoGoogle,
         logoRed,
         logoWhite

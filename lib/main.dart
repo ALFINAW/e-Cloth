@@ -16,6 +16,11 @@ class MyApp extends StatelessWidget {
       title: 'E Cloth',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          surfaceTintColor: Colors.white,
+        ),
+        scaffoldBackgroundColor: Colors.white,
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.premierTwo),
         useMaterial3: true,
         fontFamily: 'Poppins',

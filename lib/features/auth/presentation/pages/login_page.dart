@@ -2,7 +2,7 @@ import 'package:e_cloth/core/constants/app_colors.dart';
 import 'package:e_cloth/features/auth/presentation/pages/register_page.dart';
 import 'package:e_cloth/features/auth/presentation/widget/button.dart';
 import 'package:e_cloth/features/auth/presentation/widget/text_field.dart';
-import 'package:e_cloth/features/home/presentation/pages/home_page.dart';
+import 'package:e_cloth/features/home/presentation/pages/main_navigation.dart';
 import 'package:e_cloth/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
@@ -72,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const HomePage()),
+                              builder: (context) => const MainNavigation()),
                         )
                       }),
               const SizedBox(height: 20.0),

@@ -1,5 +1,8 @@
 import 'package:e_cloth/features/home/data/data%20sources/category_data.dart';
 import 'package:e_cloth/features/home/data/data%20sources/product_data.dart';
+import 'package:e_cloth/features/home/data/models/product_model.dart';
+import 'package:e_cloth/features/home/presentation/pages/category_list_page.dart';
+import 'package:e_cloth/features/home/presentation/pages/product_list_page.dart';
 import 'package:e_cloth/features/home/presentation/widget/category_item.dart';
 import 'package:e_cloth/features/home/presentation/widget/heading.dart';
 import 'package:e_cloth/features/home/presentation/widget/product_card.dart';
@@ -15,6 +18,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Product> searchProducts(String query) {
+    final allProducts =
+        todaySaleProduct + popularProduct + hoodiesProduct + flannelProduct;
+
+    return allProducts.where((product) {
+      final productTitleLower = product.title.toLowerCase();
+      final searchLower = query.toLowerCase();
+      return productTitleLower.contains(searchLower);
+    }).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +39,16 @@ class _HomePageState extends State<HomePage> {
           child: SingleChildScrollView(
             child: Column(children: [
               const SizedBox(height: 100.0),
-              headingOne(title: 'Category', subtitle: 'See All'),
+              headingOne(
+                  title: 'Category',
+                  subtitle: 'See All',
+                  onPressed: () => {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CategoryListPage()),
+                        )
+                      }),
               const SizedBox(height: 10.0),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -52,21 +75,29 @@ class _HomePageState extends State<HomePage> {
             color: Colors.white,
             border: Border(
               bottom: BorderSide(
-                color: Colors.grey, 
-                width: 1.0, 
+                color: Colors.grey,
+                width: 1.0,
               ),
             ),
           ),
           padding:
               const EdgeInsets.only(top: 40.0, bottom: 20, left: 20, right: 20),
           child: Row(
-            // row01
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
                 child: MySearchField(
                   onChanged: (value) {},
-                  onSubmitted: (value) {},
+                  onSubmitted: (value) {
+                    final searchResults = searchProducts(value);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ProductListPage(products: searchResults),
+                      ),
+                    );
+                  },
                 ),
               ),
               const SizedBox(width: 16.0),

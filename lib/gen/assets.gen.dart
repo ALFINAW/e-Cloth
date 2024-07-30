@@ -12,8 +12,18 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/back.png
+  AssetGenImage get back => const AssetGenImage('assets/icons/back.png');
+
   /// File path: assets/icons/cart.png
   AssetGenImage get cart => const AssetGenImage('assets/icons/cart.png');
+
+  /// File path: assets/icons/gridfour.png
+  AssetGenImage get gridfour =>
+      const AssetGenImage('assets/icons/gridfour.png');
+
+  /// File path: assets/icons/gridtwo.png
+  AssetGenImage get gridtwo => const AssetGenImage('assets/icons/gridtwo.png');
 
   /// File path: assets/icons/home.png
   AssetGenImage get home => const AssetGenImage('assets/icons/home.png');
@@ -25,11 +35,24 @@ class $AssetsIconsGen {
   /// File path: assets/icons/like_filed.svg
   String get likeFiled => 'assets/icons/like_filed.svg';
 
+  /// File path: assets/icons/menu.png
+  AssetGenImage get menu => const AssetGenImage('assets/icons/menu.png');
+
   /// File path: assets/icons/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/icons/profile.png');
 
   /// List of all assets
-  List<dynamic> get values => [cart, home, likeBorder, likeFiled, profile];
+  List<dynamic> get values => [
+        back,
+        cart,
+        gridfour,
+        gridtwo,
+        home,
+        likeBorder,
+        likeFiled,
+        menu,
+        profile
+      ];
 }
 
 class $AssetsImagesGen {
@@ -42,20 +65,56 @@ class $AssetsImagesGen {
   /// File path: assets/images/Bag.png
   AssetGenImage get bag => const AssetGenImage('assets/images/Bag.png');
 
+  /// File path: assets/images/Fleece Pullover Skate Hoodie.png
+  AssetGenImage get fleecePulloverSkateHoodie =>
+      const AssetGenImage('assets/images/Fleece Pullover Skate Hoodie.png');
+
+  /// File path: assets/images/Fleece Skate Hoodie.png
+  AssetGenImage get fleeceSkateHoodie =>
+      const AssetGenImage('assets/images/Fleece Skate Hoodie.png');
+
   /// File path: assets/images/Hoodies.png
   AssetGenImage get hoodies => const AssetGenImage('assets/images/Hoodies.png');
 
-  /// File path: assets/images/Jogger pants Ultra Stretch DRY-EX.png
+  /// File path: assets/images/Jogger pants Ultra Stretch DRY EX.png
   AssetGenImage get joggerPantsUltraStretchDRYEX => const AssetGenImage(
-      'assets/images/Jogger pants Ultra Stretch DRY-EX.png');
+      'assets/images/Jogger pants Ultra Stretch DRY EX.png');
+
+  /// File path: assets/images/Long Sleeve Flannel Shirt Green.png
+  AssetGenImage get longSleeveFlannelShirtGreen =>
+      const AssetGenImage('assets/images/Long Sleeve Flannel Shirt Green.png');
 
   /// File path: assets/images/Long Sleeve Flannel Shirt.png
   AssetGenImage get longSleeveFlannelShirt =>
       const AssetGenImage('assets/images/Long Sleeve Flannel Shirt.png');
 
+  /// File path: assets/images/Long Sleeve Square Flannel Shirt Biru Tua.png
+  AssetGenImage get longSleeveSquareFlannelShirtBiruTua => const AssetGenImage(
+      'assets/images/Long Sleeve Square Flannel Shirt Biru Tua.png');
+
+  /// File path: assets/images/Long Sleeve Square Flannel Shirt Biru.png
+  AssetGenImage get longSleeveSquareFlannelShirtBiru => const AssetGenImage(
+      'assets/images/Long Sleeve Square Flannel Shirt Biru.png');
+
+  /// File path: assets/images/Long Sleeve Square Flannel Shirt Krem.png
+  AssetGenImage get longSleeveSquareFlannelShirtKrem => const AssetGenImage(
+      'assets/images/Long Sleeve Square Flannel Shirt Krem.png');
+
+  /// File path: assets/images/Long Sleeve Square Flannel Shirt Pink.png
+  AssetGenImage get longSleeveSquareFlannelShirtPink => const AssetGenImage(
+      'assets/images/Long Sleeve Square Flannel Shirt Pink.png');
+
   /// File path: assets/images/Long Sleeve Square Flannel Shirt.png
   AssetGenImage get longSleeveSquareFlannelShirt =>
       const AssetGenImage('assets/images/Long Sleeve Square Flannel Shirt.png');
+
+  /// File path: assets/images/Mens Fleece Pullover Hoodie.png
+  AssetGenImage get mensFleecePulloverHoodie =>
+      const AssetGenImage('assets/images/Mens Fleece Pullover Hoodie.png');
+
+  /// File path: assets/images/Mens Ice Dye Pullover Hoodie.png
+  AssetGenImage get mensIceDyePulloverHoodie =>
+      const AssetGenImage('assets/images/Mens Ice Dye Pullover Hoodie.png');
 
   /// File path: assets/images/Shoes.png
   AssetGenImage get shoes => const AssetGenImage('assets/images/Shoes.png');
@@ -63,9 +122,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/Shorts.png
   AssetGenImage get shorts => const AssetGenImage('assets/images/Shorts.png');
 
-  /// File path: assets/images/Tapered Pants Ultra Stretch DRY-EX.png
+  /// File path: assets/images/Tapered Pants Ultra Stretch DRY EX.png
   AssetGenImage get taperedPantsUltraStretchDRYEX => const AssetGenImage(
-      'assets/images/Tapered Pants Ultra Stretch DRY-EX.png');
+      'assets/images/Tapered Pants Ultra Stretch DRY EX.png');
 
   /// File path: assets/images/logo_google.png
   AssetGenImage get logoGoogle =>
@@ -83,10 +142,19 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [
         accessories,
         bag,
+        fleecePulloverSkateHoodie,
+        fleeceSkateHoodie,
         hoodies,
         joggerPantsUltraStretchDRYEX,
+        longSleeveFlannelShirtGreen,
         longSleeveFlannelShirt,
+        longSleeveSquareFlannelShirtBiruTua,
+        longSleeveSquareFlannelShirtBiru,
+        longSleeveSquareFlannelShirtKrem,
+        longSleeveSquareFlannelShirtPink,
         longSleeveSquareFlannelShirt,
+        mensFleecePulloverHoodie,
+        mensIceDyePulloverHoodie,
         shoes,
         shorts,
         taperedPantsUltraStretchDRYEX,

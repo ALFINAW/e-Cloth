@@ -17,11 +17,10 @@ final List<Category> categories = [
   ),
   Category(
     imageWidget: Assets.images.bag.image(fit: BoxFit.fill),
-    label: 'Bag',
+    label: 'Bags',
   ),
   Category(
     imageWidget: Assets.images.accessories.image(fit: BoxFit.fill),
     label: 'Accessories',
   ),
-  
 ];

@@ -44,7 +44,7 @@ class _MySearchFieldState extends State<MySearchField> {
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.0),
             borderSide: const BorderSide(
-              color: Colors.grey,
+              color: Colors.black,
               width: 1.0,
             ),
           ),

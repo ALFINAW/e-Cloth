@@ -5,8 +5,10 @@ import 'package:flutter_svg/svg.dart';
 
 class ProductCard extends StatefulWidget {
   final List<Product> products;
+  final bool isSingleColumn;
 
-  const ProductCard({super.key, required this.products});
+  const ProductCard(
+      {super.key, required this.products, this.isSingleColumn = false});
 
   @override
   State<ProductCard> createState() => _ProductCardState();
@@ -25,11 +27,11 @@ class _ProductCardState extends State<ProductCard> {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: widget.isSingleColumn ? 1 : 2,
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
-        childAspectRatio: 1.0 / 1.76, 
+        childAspectRatio: widget.isSingleColumn ? 1.0 / 1.21 : 1.0 / 1.75,
       ),
       itemCount: widget.products.length,
       itemBuilder: (context, index) {
@@ -59,7 +61,7 @@ class _ProductCardState extends State<ProductCard> {
                       topLeft: Radius.circular(10.0),
                     ),
                     child: SizedBox(
-                      height: 190,
+                      height: widget.isSingleColumn ? 350 : 190,
                       width: double.infinity,
                       child: product.imageWidget,
                     ),
@@ -101,7 +103,7 @@ class _ProductCardState extends State<ProductCard> {
                         fontWeight: FontWeight.bold,
                       ),
                       overflow: TextOverflow.ellipsis,
-                      maxLines: 2,
+                      maxLines: 3,
                     ),
                     if (product.discountedPrice != null) ...[
                       Text(
@@ -123,7 +125,7 @@ class _ProductCardState extends State<ProductCard> {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ] else ...[
-                      const SizedBox(height: 5.0),
+                      const SizedBox(height: 3.0),
                       Text(
                         product.price,
                         style: const TextStyle(

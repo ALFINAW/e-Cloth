@@ -8,17 +8,20 @@ class ProductListCategoryPage extends StatefulWidget {
   const ProductListCategoryPage({super.key});
 
   @override
-  State<ProductListCategoryPage> createState() => _ProductListCategoryPageState();
+  State<ProductListCategoryPage> createState() =>
+      _ProductListCategoryPageState();
 }
 
 class _ProductListCategoryPageState extends State<ProductListCategoryPage> {
   @override
   Widget build(BuildContext context) {
+    final int productCount = hoodiesProduct.length;
+
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight + 10),
         child: AppBar(
-          title: const Text('Hoodies (120)'),
+          title: Text('Hoodies ($productCount)'),
           leading: IconButton(
             icon: Assets.icons.back.image(fit: BoxFit.cover),
             onPressed: () {
@@ -44,9 +47,10 @@ class _ProductListCategoryPageState extends State<ProductListCategoryPage> {
           padding: const EdgeInsets.all(20),
           child: InkWell(
             onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const ProductDetailPage()),
-                  ),
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const ProductDetailPage()),
+            ),
             child: ProductCard(products: hoodiesProduct),
           ),
         ),

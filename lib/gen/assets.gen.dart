@@ -38,8 +38,17 @@ class $AssetsIconsGen {
   /// File path: assets/icons/menu.png
   AssetGenImage get menu => const AssetGenImage('assets/icons/menu.png');
 
+  /// File path: assets/icons/min.png
+  AssetGenImage get min => const AssetGenImage('assets/icons/min.png');
+
+  /// File path: assets/icons/plus.png
+  AssetGenImage get plus => const AssetGenImage('assets/icons/plus.png');
+
   /// File path: assets/icons/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/icons/profile.png');
+
+  /// File path: assets/icons/trash.png
+  AssetGenImage get trash => const AssetGenImage('assets/icons/trash.png');
 
   /// List of all assets
   List<dynamic> get values => [
@@ -51,7 +60,10 @@ class $AssetsIconsGen {
         likeBorder,
         likeFiled,
         menu,
-        profile
+        min,
+        plus,
+        profile,
+        trash
       ];
 }
 
@@ -126,6 +138,10 @@ class $AssetsImagesGen {
   AssetGenImage get taperedPantsUltraStretchDRYEX => const AssetGenImage(
       'assets/images/Tapered Pants Ultra Stretch DRY EX.png');
 
+  /// File path: assets/images/Ultralight Light Down Jacket.png
+  AssetGenImage get ultralightLightDownJacket =>
+      const AssetGenImage('assets/images/Ultralight Light Down Jacket.png');
+
   /// File path: assets/images/logo_google.png
   AssetGenImage get logoGoogle =>
       const AssetGenImage('assets/images/logo_google.png');
@@ -158,6 +174,7 @@ class $AssetsImagesGen {
         shoes,
         shorts,
         taperedPantsUltraStretchDRYEX,
+        ultralightLightDownJacket,
         logoGoogle,
         logoRed,
         logoWhite

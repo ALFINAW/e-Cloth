@@ -1,6 +1,7 @@
 import 'package:e_cloth/features/home/data/data%20sources/category_data.dart';
 import 'package:e_cloth/features/home/data/data%20sources/product_data.dart';
 import 'package:e_cloth/features/home/data/models/product_model.dart';
+import 'package:e_cloth/features/home/presentation/pages/cart_page.dart';
 import 'package:e_cloth/features/home/presentation/pages/category_list_page.dart';
 import 'package:e_cloth/features/home/presentation/pages/product_list_page.dart';
 import 'package:e_cloth/features/home/presentation/widget/category_item.dart';
@@ -81,7 +82,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           padding:
-              const EdgeInsets.only(top: 40.0, bottom: 20, left: 20, right: 20),
+              const EdgeInsets.only(top: 40.0, bottom: 20, left: 20, right: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -94,16 +95,22 @@ class _HomePageState extends State<HomePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            ProductListPage(products: searchResults),
+                            ProductListPage(products: searchResults, searchHint: value),
                       ),
                     );
                   },
                 ),
               ),
-              const SizedBox(width: 16.0),
-              SizedBox(
-                  width: 24.0,
-                  child: Assets.icons.cart.image(fit: BoxFit.cover)),
+              const SizedBox(width: 5.0),
+              IconButton(
+                icon: Assets.icons.cart.image(fit: BoxFit.cover),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const CartPage()),
+                  );
+                },
+              ),
             ],
           ),
         ),

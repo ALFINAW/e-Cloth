@@ -31,7 +31,7 @@ class _ProductCardState extends State<ProductCard> {
         crossAxisCount: widget.isSingleColumn ? 1 : 2,
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
-        childAspectRatio: widget.isSingleColumn ? 1.0 / 1.21 : 1.0 / 1.75,
+        childAspectRatio: widget.isSingleColumn ? 1.0 / 1.20 : 1.0 / 1.74,
       ),
       itemCount: widget.products.length,
       itemBuilder: (context, index) {
@@ -103,7 +103,7 @@ class _ProductCardState extends State<ProductCard> {
                         fontWeight: FontWeight.bold,
                       ),
                       overflow: TextOverflow.ellipsis,
-                      maxLines: 3,
+                      maxLines: 2,
                     ),
                     if (product.discountedPrice != null) ...[
                       Text(

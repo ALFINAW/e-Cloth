@@ -1,5 +1,6 @@
 import 'package:e_cloth/features/home/data/data%20sources/product_data.dart';
 import 'package:e_cloth/features/home/data/models/product_model.dart';
+import 'package:e_cloth/features/home/presentation/pages/cart_page.dart';
 import 'package:e_cloth/features/home/presentation/widget/dropdown.dart';
 import 'package:e_cloth/features/home/presentation/widget/product_card.dart';
 import 'package:e_cloth/features/home/presentation/widget/search_field.dart';
@@ -92,7 +93,13 @@ class _ProductListPageState extends State<ProductListPage> {
                     const SizedBox(width: 10.0),
                     IconButton(
                       icon: Assets.icons.cart.image(fit: BoxFit.cover),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CartPage()),
+                        );
+                      },
                     ),
                     IconButton(
                       icon: Assets.icons.menu.image(fit: BoxFit.cover),

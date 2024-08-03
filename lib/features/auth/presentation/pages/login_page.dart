@@ -65,8 +65,6 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 15.0),
               MyButton(
                   label: 'Continue',
-                  buttonColor: AppColors.secondaryOne,
-                  labelColor: AppColors.premierTwo,
                   suffixIcon: Icons.arrow_right,
                   onPressed: () => {
                         Navigator.push(

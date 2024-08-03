@@ -1,3 +1,4 @@
+import 'package:e_cloth/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
@@ -40,14 +41,14 @@ class MyButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           minimumSize: Size(widgetWidth, widgetHeight),
-          backgroundColor: buttonColor ?? Colors.transparent,
-          foregroundColor: labelColor ?? Colors.white,
+          backgroundColor: buttonColor ?? AppColors.secondaryOne,
+          foregroundColor: labelColor ?? AppColors.premierTwo,
           side: borderColor != null && borderWidth != null
               ? BorderSide(color: borderColor!, width: borderWidth!)
               : BorderSide.none,
           elevation: 0,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.circular(10.0),
           ),
         ),
         onPressed: onPressed,

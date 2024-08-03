@@ -1,4 +1,6 @@
 import 'package:e_cloth/core/constants/app_colors.dart';
+import 'package:e_cloth/features/auth/presentation/widget/button.dart';
+import 'package:e_cloth/features/home/presentation/pages/payment_page.dart';
 import 'package:e_cloth/features/home/presentation/widget/cart_item.dart';
 import 'package:e_cloth/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
@@ -213,24 +215,18 @@ class _CartPageState extends State<CartPage> {
                           ),
                         ],
                       ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.premierOne,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 45, vertical: 15),
-                        ),
-                        child: const Text(
-                          'Checkout',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
+                      MyButton(
+                          label: 'Checkout',
+                          width: 160,
+                          buttonColor: AppColors.premierOne,
+                          onPressed: () => {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PaymentPage()),
+                                )
+                              })
                     ],
                   ),
                 ),

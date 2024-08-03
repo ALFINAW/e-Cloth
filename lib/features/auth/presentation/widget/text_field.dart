@@ -21,6 +21,10 @@ class MyTextField extends StatefulWidget {
   final Function(String)? onSubmitted;
   final bool isDatePicker;
   final Function(DateTime)? onDateSelected;
+  final double? width;
+  final int? maxLines;
+  final TextStyle? hintStyle;
+  final EdgeInsets? margin;
 
   const MyTextField({
     super.key,
@@ -41,6 +45,10 @@ class MyTextField extends StatefulWidget {
     this.onSubmitted,
     this.isDatePicker = false,
     this.onDateSelected,
+    this.width,
+    this.maxLines,
+    this.hintStyle,
+    this.margin,
   });
 
   @override
@@ -80,17 +88,19 @@ class _MyTextFieldState extends State<MyTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 20.0),
+      margin: widget.margin ?? const EdgeInsets.only(bottom: 20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 51,
+            height: widget.maxLines != null ? (widget.maxLines! * 24.0) : 60.0,
+            width: widget.width ?? double.infinity,
             child: TextFormField(
               enabled: widget.enabled,
               controller: textEditingController,
               validator: widget.validator,
               maxLength: widget.maxLength,
+              maxLines: widget.maxLines ?? 1,
               obscureText: widget.obscure ? _obscureText : false,
               keyboardType: widget.isDatePicker
                   ? TextInputType.none
@@ -126,8 +136,10 @@ class _MyTextFieldState extends State<MyTextField> {
                           )
                         : null,
                 hintText: widget.hint,
+                hintStyle: widget.hintStyle ??
+                    const TextStyle(color: Colors.grey, fontSize: 14),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(10.0),
                   borderSide: const BorderSide(
                     color: Colors.grey,
                     width: 1.0,
@@ -140,7 +152,10 @@ class _MyTextFieldState extends State<MyTextField> {
                     width: 1.0,
                   ),
                 ),
-                contentPadding: const EdgeInsets.all(12.0),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 18.0,
+                  vertical: 10.0, // Tambahkan padding vertikal
+                ),
               ),
               onChanged: widget.onChanged,
               onFieldSubmitted: widget.onSubmitted,
@@ -148,7 +163,6 @@ class _MyTextFieldState extends State<MyTextField> {
             ),
           ),
           if (widget.helper != null) ...[
-            const SizedBox(height: 8.0),
             Text(
               widget.helper!,
               style: const TextStyle(color: Colors.grey, fontSize: 12),

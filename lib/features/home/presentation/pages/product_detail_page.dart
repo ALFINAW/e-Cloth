@@ -1,4 +1,5 @@
 import 'package:e_cloth/core/constants/app_colors.dart';
+import 'package:e_cloth/features/auth/presentation/widget/button.dart';
 import 'package:e_cloth/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
@@ -180,28 +181,11 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           left: 20,
           bottom: 20,
           child: selectedVariant != null
-              ? ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.premierOne,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    elevation: 5.0,
-                    shadowColor: Colors.black.withOpacity(0.5),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 35.0,
-                      vertical: 15.0,
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: const Text(
-                    'Add to Cart',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                )
+              ? MyButton(
+                  label: 'Add to Chart',
+                  width: 170,
+                  buttonColor: AppColors.premierOne,
+                  onPressed: () => {})
               : const SizedBox.shrink(),
         )
       ],

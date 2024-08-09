@@ -9,43 +9,53 @@ class MyDropdown extends StatelessWidget {
   final double? width;
   final EdgeInsetsGeometry? padding;
   final Color? borderColor;
+  final Color? backgroundColor;
+  final Color? hintColor;
 
-  const MyDropdown({
-    super.key,
-    required this.hint,
-    required this.value,
-    required this.onChanged,
-    required this.items,
-    this.height,
-    this.width,
-    this.padding,
-    this.borderColor,
-  });
+  const MyDropdown(
+      {super.key,
+      required this.hint,
+      required this.value,
+      required this.onChanged,
+      required this.items,
+      this.height,
+      this.width,
+      this.padding,
+      this.borderColor,
+      this.backgroundColor,
+      this.hintColor});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height, // Default height is null
-      width: width, // Default width is null
+      height: height,
+      width: width,
       padding: padding ??
-          const EdgeInsets.symmetric(
-              horizontal: 10, vertical: 5), // Default padding
+          const EdgeInsets.only(left: 10, top: 5, bottom: 5, right: 5),
       decoration: BoxDecoration(
-        border: Border.all(
-            color: borderColor ?? Colors.black), // Default border color
-        borderRadius: BorderRadius.circular(10),
-      ),
+          border: Border.all(color: borderColor ?? Colors.black),
+          borderRadius: BorderRadius.circular(10),
+          color: backgroundColor ?? Colors.white),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
-          hint: Text(
-            hint,
-            style: const TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-            ),
+          hint: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                hint,
+                style:
+                    TextStyle(fontSize: 14, color: hintColor ?? Colors.black),
+              ),
+              const SizedBox(width: 5.0),
+              Icon(
+                Icons.keyboard_arrow_down,
+                size: 20,
+                color: hintColor ?? Colors.black,
+              ),
+            ],
           ),
           value: value,
-          icon: const Icon(Icons.keyboard_arrow_down, size: 20),
+          icon: const SizedBox.shrink(),
           isDense: true,
           style: const TextStyle(color: Colors.black, fontSize: 14),
           onChanged: onChanged,

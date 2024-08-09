@@ -1,3 +1,4 @@
+import 'package:e_cloth/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class MySearchField extends StatefulWidget {
@@ -39,28 +40,33 @@ class _MySearchFieldState extends State<MySearchField> {
         enabled: widget.enabled,
         controller: _textEditingController,
         decoration: InputDecoration(
-          hintText: widget.hint,
-          filled: false,
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
-            borderSide: const BorderSide(
-              color: Colors.black,
-              width: 1.0,
+            hintText: widget.hint,
+            hintStyle: TextStyle(
+              fontSize: widget.height / 3.5,
             ),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
-            borderSide: const BorderSide(
-              color: Colors.grey,
-              width: 1.0,
+            filled: false,
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8.0),
+              borderSide: const BorderSide(
+                color: Colors.black,
+                width: 1.0,
+              ),
             ),
-          ),
-          prefixIcon: Icon(
-            Icons.search,
-            color: Colors.grey[500],
-          ),
-          contentPadding: EdgeInsets.symmetric(vertical: widget.height / 4),
-        ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8.0),
+              borderSide: const BorderSide(
+                color: Colors.grey,
+                width: 1.0,
+              ),
+            ),
+            prefixIcon: Container(
+              padding: const EdgeInsets.all(16.0),
+              child: Assets.icons.search.image(
+                color: Colors.grey[500],
+                fit: BoxFit.cover,
+              ),
+            ),
+            contentPadding: const EdgeInsets.all(20)),
         onChanged: (value) {
           widget.onChanged(value);
         },

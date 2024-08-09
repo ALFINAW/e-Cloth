@@ -125,7 +125,7 @@ class _ProductListPageState extends State<ProductListPage> {
                     const Text(
                       "Filter",
                       style: TextStyle(
-                        fontSize: 15.0,
+                        fontSize: 14.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

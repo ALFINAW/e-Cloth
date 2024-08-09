@@ -15,6 +15,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/back.png
   AssetGenImage get back => const AssetGenImage('assets/icons/back.png');
 
+  /// File path: assets/icons/bag.png
+  AssetGenImage get bag => const AssetGenImage('assets/icons/bag.png');
+
+  /// File path: assets/icons/box.png
+  AssetGenImage get box => const AssetGenImage('assets/icons/box.png');
+
   /// File path: assets/icons/cart.png
   AssetGenImage get cart => const AssetGenImage('assets/icons/cart.png');
 
@@ -25,6 +31,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/gridtwo.png
   AssetGenImage get gridtwo => const AssetGenImage('assets/icons/gridtwo.png');
 
+  /// File path: assets/icons/history.png
+  AssetGenImage get history => const AssetGenImage('assets/icons/history.png');
+
   /// File path: assets/icons/home.png
   AssetGenImage get home => const AssetGenImage('assets/icons/home.png');
 
@@ -34,6 +43,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/like_filed.svg
   String get likeFiled => 'assets/icons/like_filed.svg';
+
+  /// File path: assets/icons/logout.png
+  AssetGenImage get logout => const AssetGenImage('assets/icons/logout.png');
 
   /// File path: assets/icons/menu.png
   AssetGenImage get menu => const AssetGenImage('assets/icons/menu.png');
@@ -47,22 +59,30 @@ class $AssetsIconsGen {
   /// File path: assets/icons/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/icons/profile.png');
 
+  /// File path: assets/icons/search.png
+  AssetGenImage get search => const AssetGenImage('assets/icons/search.png');
+
   /// File path: assets/icons/trash.png
   AssetGenImage get trash => const AssetGenImage('assets/icons/trash.png');
 
   /// List of all assets
   List<dynamic> get values => [
         back,
+        bag,
+        box,
         cart,
         gridfour,
         gridtwo,
+        history,
         home,
         likeBorder,
         likeFiled,
+        logout,
         menu,
         min,
         plus,
         profile,
+        search,
         trash
       ];
 }
@@ -128,11 +148,23 @@ class $AssetsImagesGen {
   AssetGenImage get mensIceDyePulloverHoodie =>
       const AssetGenImage('assets/images/Mens Ice Dye Pullover Hoodie.png');
 
+  /// File path: assets/images/Rayon Pintuck Pullover Long Sleeve Blouse.png
+  AssetGenImage get rayonPintuckPulloverLongSleeveBlouse => const AssetGenImage(
+      'assets/images/Rayon Pintuck Pullover Long Sleeve Blouse.png');
+
+  /// File path: assets/images/Rayon Skipper Collar 34 Sleeve Blouse.png
+  AssetGenImage get rayonSkipperCollar34SleeveBlouse => const AssetGenImage(
+      'assets/images/Rayon Skipper Collar 34 Sleeve Blouse.png');
+
   /// File path: assets/images/Shoes.png
   AssetGenImage get shoes => const AssetGenImage('assets/images/Shoes.png');
 
   /// File path: assets/images/Shorts.png
   AssetGenImage get shorts => const AssetGenImage('assets/images/Shorts.png');
+
+  /// File path: assets/images/Soft Brushed Long Sleeve Shirt.png
+  AssetGenImage get softBrushedLongSleeveShirt =>
+      const AssetGenImage('assets/images/Soft Brushed Long Sleeve Shirt.png');
 
   /// File path: assets/images/Tapered Pants Ultra Stretch DRY EX.png
   AssetGenImage get taperedPantsUltraStretchDRYEX => const AssetGenImage(
@@ -141,6 +173,14 @@ class $AssetsImagesGen {
   /// File path: assets/images/Ultralight Light Down Jacket.png
   AssetGenImage get ultralightLightDownJacket =>
       const AssetGenImage('assets/images/Ultralight Light Down Jacket.png');
+
+  /// File path: assets/images/Winter jacket by adam scott.png
+  AssetGenImage get winterJacketByAdamScott =>
+      const AssetGenImage('assets/images/Winter jacket by adam scott.png');
+
+  /// File path: assets/images/foto profile.png
+  AssetGenImage get fotoProfile =>
+      const AssetGenImage('assets/images/foto profile.png');
 
   /// File path: assets/images/logo_google.png
   AssetGenImage get logoGoogle =>
@@ -171,10 +211,15 @@ class $AssetsImagesGen {
         longSleeveSquareFlannelShirt,
         mensFleecePulloverHoodie,
         mensIceDyePulloverHoodie,
+        rayonPintuckPulloverLongSleeveBlouse,
+        rayonSkipperCollar34SleeveBlouse,
         shoes,
         shorts,
+        softBrushedLongSleeveShirt,
         taperedPantsUltraStretchDRYEX,
         ultralightLightDownJacket,
+        winterJacketByAdamScott,
+        fotoProfile,
         logoGoogle,
         logoRed,
         logoWhite

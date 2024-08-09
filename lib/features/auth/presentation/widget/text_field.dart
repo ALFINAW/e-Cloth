@@ -25,31 +25,32 @@ class MyTextField extends StatefulWidget {
   final int? maxLines;
   final TextStyle? hintStyle;
   final EdgeInsets? margin;
+  final Color? borderColor;
 
-  const MyTextField({
-    super.key,
-    this.id,
-    this.label,
-    this.value,
-    this.hint,
-    this.helper,
-    this.validator,
-    this.obscure = false,
-    this.enabled = true,
-    this.maxLength,
-    this.prefixIcon,
-    this.suffixIcon,
-    this.keyboardType,
-    this.inputFormatters,
-    required this.onChanged,
-    this.onSubmitted,
-    this.isDatePicker = false,
-    this.onDateSelected,
-    this.width,
-    this.maxLines,
-    this.hintStyle,
-    this.margin,
-  });
+  const MyTextField(
+      {super.key,
+      this.id,
+      this.label,
+      this.value,
+      this.hint,
+      this.helper,
+      this.validator,
+      this.obscure = false,
+      this.enabled = true,
+      this.maxLength,
+      this.prefixIcon,
+      this.suffixIcon,
+      this.keyboardType,
+      this.inputFormatters,
+      required this.onChanged,
+      this.onSubmitted,
+      this.isDatePicker = false,
+      this.onDateSelected,
+      this.width,
+      this.maxLines,
+      this.hintStyle,
+      this.margin,
+      this.borderColor});
 
   @override
   State<MyTextField> createState() => _MyTextFieldState();
@@ -140,8 +141,8 @@ class _MyTextFieldState extends State<MyTextField> {
                     const TextStyle(color: Colors.grey, fontSize: 14),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.0),
-                  borderSide: const BorderSide(
-                    color: Colors.grey,
+                  borderSide: BorderSide(
+                    color: widget.borderColor ?? Colors.grey,
                     width: 1.0,
                   ),
                 ),

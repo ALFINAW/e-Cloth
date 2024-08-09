@@ -13,6 +13,7 @@ class MyButton extends StatelessWidget {
   final Color? borderColor;
   final double? borderWidth;
   final double? fontSize;
+  final FontWeight? fontWeight;
 
   const MyButton({
     super.key,
@@ -27,6 +28,7 @@ class MyButton extends StatelessWidget {
     this.borderColor,
     this.borderWidth,
     this.fontSize,
+    this.fontWeight,
   });
 
   @override
@@ -69,7 +71,7 @@ class MyButton extends StatelessWidget {
                   label,
                   style: TextStyle(
                     fontSize: fontSize ?? 14.0,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: fontWeight ?? FontWeight.bold,
                     color: labelColor ?? Colors.white,
                   ),
                 ),

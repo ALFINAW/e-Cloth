@@ -49,8 +49,8 @@ class _TransactionDetailState extends State<TransactionDetail> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (widget.isPurchaseOngoing) const PacketTracking(),
-            const SizedBox(height: 20.0),
+            if (widget.isPurchaseOngoing) const PackageTracking(),
+            if (widget.isPurchaseOngoing) const SizedBox(height: 25.0),
             const ItemDetail(
               title: "Information Details",
               keyValuePairs: [
